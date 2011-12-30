@@ -80,8 +80,8 @@ JSON_STATUS CVideoLibrary::SearchForDetails(const CStdString &method, ITransport
 
   CVariant param = parameterObject;
   /*param["fields"] = CVariant(arrayValue);*/
-  param["fields"].append("path");
-  param["fields"].append("title");
+  param["properties"].append("path");
+  param["properties"].append("title");
 
   HandleFileItemList(NULL, true, "movies", items, param, result);
 

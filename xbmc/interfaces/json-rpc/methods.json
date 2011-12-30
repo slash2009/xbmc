@@ -581,7 +581,7 @@
       "properties": {
         "limits": { "$ref": "List.LimitsReturned", "required": true },
         "movies": { "type": "array",
-         "items": { "$ref": "Video.Details.Movie" }
+         "items": { "$ref": "Library.Details.Movie" }
         }
       }
     }
