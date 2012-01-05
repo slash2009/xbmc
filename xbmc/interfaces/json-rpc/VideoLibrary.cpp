@@ -73,6 +73,7 @@ JSON_STATUS CVideoLibrary::SearchForDetails(const CStdString &method, ITransport
     CVideoInfoTag movie;	
     movie.m_strPath = movieList[i].m_url[0].m_url;
     movie.m_strTitle = movieList[i].strTitle.c_str();
+    movie.m_strIMDBNumber = movieList[i].strId;
     CFileItemPtr pItem(new CFileItem(movie));
     pItem->SetLabel(movieList[i].strTitle.c_str());
     items.Add(pItem);
@@ -82,6 +83,7 @@ JSON_STATUS CVideoLibrary::SearchForDetails(const CStdString &method, ITransport
   /*param["fields"] = CVariant(arrayValue);*/
   param["properties"].append("path");
   param["properties"].append("title");
+  param["properties"].append("imdbnumber");
 
   HandleFileItemList(NULL, true, "movies", items, param, result);
 
